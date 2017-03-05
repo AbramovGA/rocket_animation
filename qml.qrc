@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Rocket.qml</file>
+        <file>images/soyuz_rocket.png</file>
+        <file>Platform.qml</file>
+        <file>LeftHolder.qml</file>
+        <file>RightHolder.qml</file>
+        <file>Particles.qml</file>
+        <file>FlameBig.qml</file>
+        <file>FlameSmallL.qml</file>
+        <file>FlameSmallR.qml</file>
+        <file>Smoke_1.qml</file>
+        <file>Smoke_2.qml</file>
+        <file>Smoke_3.qml</file>
+        <file>Generator.js</file>
+    </qresource>
+</RCC>
