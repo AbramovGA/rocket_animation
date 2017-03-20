@@ -1,7 +1,7 @@
 var component;
 var object;
 
-function createObjects(url, parent, callback) {
+function createObject(url, parent, callback) {
     component = Qt.createComponent(url);
     if (component.status == Component.Ready)
         finishCreation(callback, parent);
@@ -17,4 +17,17 @@ function finishCreation(callback, parent) {
         callback(object);
     } else if (component.status == Component.Error)
         console.log("Error loading component:", component.errorString());
+}
+
+function generateObjects(url, count, parent, callback){
+    var a=new Array;
+    for(var i=0;i<count;i++){
+        createObject(url,parent,function(obj){
+            obj.x=Math.random()%500;
+            obj.y=Math.random()%100;
+            a.push(obj);
+        });
+    }
+    while(a.length<count){}
+    callback(a);
 }

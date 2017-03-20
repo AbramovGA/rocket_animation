@@ -184,6 +184,7 @@ ApplicationWindow {
         }
     }
 
+
     Component.onCompleted: {
         timerPrePreLaunch.running=true;
         timerPreLaunch.running=true;
@@ -195,11 +196,6 @@ ApplicationWindow {
 
 
 }
-
-
-
-
-//    Component.onCompleted:  createDots()
 
 //    function waitSeconds(iMilliSeconds) {
 //        var counter= 0

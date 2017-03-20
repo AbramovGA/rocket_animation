@@ -4,13 +4,10 @@ Item {
     id: flameDot
     width:30
     height:30
-    z:5
     Canvas {
         id:canvas
         width:30
         height:30
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.bottom: parent.bottom
 
         property color fillStyle: "#ff0000" //red goes fasta!
         property bool fill: true
@@ -27,7 +24,7 @@ Item {
             ctx.fillStyle = canvas.fillStyle;
             ctx.translate(originX, originY)
             ctx.translate(-originX, -originY)
-            ctx.ellipse(0,0,10,10);
+            ctx.ellipse(0,0,30,30);
             ctx.fill();
             ctx.restore();
         }
@@ -40,7 +37,7 @@ Item {
 
     NumberAnimation on y{
         id:anim;
-        to: 0; duration: 100000;
+        to: 500; duration: 10000;
         running: false;
     }
 }

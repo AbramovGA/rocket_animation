@@ -88,7 +88,7 @@ Item{
             rocket.y=b
             dropYAnim.duration = 20000;
             dropAnim.running = true;
-            createDots();
+            timerFlameInterval.running=true;
         }
     }
 
@@ -100,6 +100,14 @@ Item{
         onTriggered: {
 
         }
+    }
+
+    Timer{
+        id:timerFlameInterval
+        interval: 1000;
+        running:false;
+        repeat:true
+        onTriggered: createDots(10);
     }
 
     Component.onCompleted: {
@@ -119,12 +127,16 @@ Item{
 
     }
 
-    function createDots(){
-        Generator.createObjects("Particles.qml", main, function(flameDot){
-            flameDot.x=rocket.x+Math.random()%500;
-            flameDot.y=rocket.y+Math.random()%100;
+    function createDots(count){
+        Generator.generateObjects("Particles.qml", count, main, function(array){
+            for(var i=0; i<array.length;i++){
+            array[i].x=Math.random()%500;
+            array[i].y=Math.random()%100;
+            }
         });
     }
+
+
 
 
 
