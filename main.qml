@@ -81,7 +81,7 @@ ApplicationWindow {
         anchors.top: rocket1.bottom
         anchors.horizontalCenter: rocket1.horizontalCenter
     }
-
+*/
     Smoke_1{
         id:smoke1
         y:530
@@ -122,7 +122,7 @@ ApplicationWindow {
             running: false;
         }
     }
-*/
+
 
     Timer{
         id:timerPrePreLaunch
@@ -196,13 +196,3 @@ ApplicationWindow {
 
 
 }
-
-//    function waitSeconds(iMilliSeconds) {
-//        var counter= 0
-//            , start = new Date().getTime()
-//            , end = 0;
-//        while (counter < iMilliSeconds) {
-//            end = new Date().getTime();
-//            counter = end - start;
-//        }
-//    }

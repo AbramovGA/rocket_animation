@@ -23,8 +23,8 @@ function generateObjects(url, count, parent, callback){
     var a=new Array;
     for(var i=0;i<count;i++){
         createObject(url,parent,function(obj){
-            obj.x=Math.random()%500;
-            obj.y=Math.random()%100;
+            obj.x=0;
+            obj.y=0;
             a.push(obj);
         });
     }

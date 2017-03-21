@@ -48,13 +48,6 @@ Item {
             ctx.lineTo(0,90);
             ctx.fill();
             ctx.moveTo(0,90);
-//            ctx.lineTo(80,18);
-//            ctx.lineTo(70,10);
-//            ctx.lineTo(95,18);
-//            ctx.moveTo(95,10);
-//            ctx.lineTo(80,18);
-//            ctx.moveTo(70,10);
-//            ctx.lineTo(30,100);
             ctx.closePath();
             ctx.stroke();
             ctx.restore();
@@ -68,7 +61,7 @@ Item {
         target: leftHolder
         from:0
         to:-90
-        duration: 5000
+        duration: 30000
         running: false
     }
 
@@ -77,7 +70,7 @@ Item {
         target: leftHolder
         from:-90
         to:0
-        duration: 5000
+        duration: 30000
         running: false
     }
 

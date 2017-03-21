@@ -5,6 +5,7 @@ Item{
     id:rocket
     width: 200
     height: 300
+    property double speedCoef: 1
     Canvas {
         id:canvas
         width:200
@@ -86,8 +87,8 @@ Item{
             anchors.bottom=undefined
             rocket.x=a
             rocket.y=b
-            dropYAnim.duration = 20000;
-            dropAnim.running = true;
+            //dropYAnim.duration = 20000;
+            flightTimer.running = true;
             timerFlameInterval.running=true;
         }
     }
@@ -104,10 +105,10 @@ Item{
 
     Timer{
         id:timerFlameInterval
-        interval: 1000;
+        interval: 40;
         running:false;
         repeat:true
-        onTriggered: createDots(10);
+        onTriggered: createDots(6);
     }
 
     Component.onCompleted: {
@@ -116,6 +117,19 @@ Item{
         timerPostTakeOff.running=true;
     }
 
+    Timer{
+        id: flightTimer
+        running: false
+        interval:100*speedCoef
+        repeat: true
+        onTriggered:{
+            rocket.y--;
+            if(speedCoef>0.02)
+                speedCoef-=0.01;
+        }
+    }
+
+/*
     SequentialAnimation on y{
         id: dropAnim
         running: false
@@ -126,12 +140,13 @@ Item{
         }
 
     }
-
+*/
     function createDots(count){
         Generator.generateObjects("Particles.qml", count, main, function(array){
             for(var i=0; i<array.length;i++){
-            array[i].x=Math.random()%500;
-            array[i].y=Math.random()%100;
+            array[i].x=rocket.x+70+52*Math.random();
+            array[i].y=rocket.y+295;
+            array[i].forDestroy.interval=Math.abs(3000-Math.abs(array[i].x-rocket.x-95)*Math.abs(array[i].x-rocket.x-95)*2);
             }
         });
     }

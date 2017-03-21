@@ -67,7 +67,7 @@ Item {
         target: rightHolder
         from:0
         to:90
-        duration: 5000
+        duration: 30000
         running: false
     }
 
@@ -76,7 +76,7 @@ Item {
         target: rightHolder
         from:90
         to:0
-        duration: 5000
+        duration: 30000
         running: false
     }
 
